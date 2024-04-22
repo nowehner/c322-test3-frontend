@@ -1,7 +1,7 @@
 const mode = 0;
 
 const host_local = "http://localhost:8080";
-const host_remote = "https://ducks-service-???.onrender.com";
+const host_remote = "http://localhost:8080";
 
 function getHost() {
     return (mode == 0) ? host_local : host_remote;
@@ -59,6 +59,7 @@ async function signup() {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
+            
         },
         body: JSON.stringify(customer)
       };
@@ -82,8 +83,8 @@ async function signup() {
 
 
 async function login() {    
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+    let username = document.getElementById("user").value;
+    let password = document.getElementById("pass").value;
     let customer = {username: username, password: password}
     let request = {
         method: "POST",
